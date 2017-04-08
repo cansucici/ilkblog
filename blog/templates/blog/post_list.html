@@ -1,16 +1,11 @@
-<html>
-  <head>
-      <title> Cansu'nun Bloğu </title>
-    </head>
-    <body>
-      <div>
-      <h1> SELAAMMM </h1>
-      <p> Bu benim ilk bloğumm. </p>
-      </div>
+<div>
+     <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-      <div>
-        <p>published: 14.06.2014, 12:20</p>
-        <h3> <a href=""> fotoğraflarım </a></h3>
-      </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.yayinlanma_tarihi }}</p>
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaks }}</p>
+    </div>
+{% endfor %}
